@@ -5,19 +5,26 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Prepare deployment artifact
+        run: |
+          mkdir -p deploy
+          rsync -av --exclude='.github' --exclude='.git' --exclude='README.md' --exclude='deploy.yml' --exclude='.gitignore' --exclude='node_modules' ./ deploy/
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          persist-credentials: false
+          path: deploy
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-          keep_files: false
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
+        uses: actions/deploy-pages@v1
