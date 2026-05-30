@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Servicios — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+      .service{background:rgba(255,255,255,0.03);padding:1rem;border-radius:14px}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1100px;margin:2rem auto;padding:1rem">
+      <h1>Servicios</h1>
+      <p>Ofrezco servicios adaptables con enfoque editorial y estratégico.</p>
+
+      <div class="services">
+        <div class="service"><h3>Branding</h3><p>Identidad, manual y aplicaciones.</p></div>
+        <div class="service"><h3>Diseño para redes sociales</h3><p>Contenidos con ritmo y consistencia.</p></div>
+        <div class="service"><h3>Diseño editorial</h3><p>Revistas, catálogos y piezas impresas.</p></div>
+        <div class="service"><h3>Motion graphics</h3><p>Animaciones y piezas para campaña.</p></div>
+        <div class="service"><h3>Diseño web</h3><p>UX/UI con estética editorial aplicada.</p></div>
+        <div class="service"><h3>Dirección de arte</h3><p>Coordinación creativa para proyectos completos.</p></div>
+      </div>
+
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

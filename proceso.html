@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Proceso creativo — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+      .step{background:rgba(255,255,255,0.03);padding:1rem;border-radius:14px}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1100px;margin:2rem auto;padding:1rem">
+      <h1>Proceso creativo</h1>
+      <p>Seis etapas narrativas que guían cada proyecto.</p>
+
+      <div class="steps">
+        <div class="step"><h3>1. Descubrir</h3><p>Brief, contexto y preguntas clave.</p></div>
+        <div class="step"><h3>2. Investigar</h3><p>Referencias, audiencia y moodboards.</p></div>
+        <div class="step"><h3>3. Idear</h3><p>Bocetos, conceptos y variantes.</p></div>
+        <div class="step"><h3>4. Diseñar</h3><p>Construcción visual y sistemas.</p></div>
+        <div class="step"><h3>5. Refinar</h3><p>Pruebas, prototipos y ajustes.</p></div>
+        <div class="step"><h3>6. Implementar</h3><p>Entrega y producción final.</p></div>
+      </div>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

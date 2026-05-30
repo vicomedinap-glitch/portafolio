@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Testimonios — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .note{background:linear-gradient(180deg,#fff9b0,#f3d974);padding:1rem;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.2)}
+      .note p{margin:0}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+
+    <main class="panel-content" style="max-width:900px;margin:2rem auto;padding:1rem">
+      <h1>Testimonios</h1>
+      <p>Notas escritas a mano que hablan del trabajo y los resultados.</p>
+
+      <div class="panel-grid" style="margin-top:1rem">
+        <div class="panel-card note"><strong>Cliente A</strong><p>"La propuesta fue impecable: una mezcla de personalidad, claridad y ejecución perfecta."</p></div>
+        <div class="panel-card note"><strong>Cliente B</strong><p>"Su enfoque creativo transformó nuestra identidad y la hizo totalmente distintiva."</p></div>
+        <div class="panel-card note"><strong>Cliente C</strong><p>"El trabajo combinó sensibilidad estética con una claridad estratégica impresionante."</p></div>
+      </div>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

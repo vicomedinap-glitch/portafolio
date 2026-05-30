@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Habilidades — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .swatches{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+      .sw{width:140px;height:110px;border-radius:12px;display:grid;place-items:center;color:#1b1410;font-weight:700}
+      .examples{margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1100px;margin:2rem auto;padding:1rem">
+      <h1>Habilidades</h1>
+      <p>Presentación de habilidades mediante muestras reales en lugar de barras de progreso.</p>
+
+      <div class="swatches">
+        <div class="sw" style="background:#cbb0a5">Branding</div>
+        <div class="sw" style="background:#f1d6c5">Editorial</div>
+        <div class="sw" style="background:#d7c1b5">Motion</div>
+        <div class="sw" style="background:#e4d6c8">Fotografía</div>
+      </div>
+
+      <div class="examples">
+        <div class="panel-card"><h2>Branding</h2><p>Ejemplos de identidades, manuales y aplicaciones tangibles.</p></div>
+        <div class="panel-card"><h2>Editorial</h2><p>Layouts y sistemas tipográficos aplicados a revistas y catálogos.</p></div>
+        <div class="panel-card"><h2>Motion</h2><p>Animaciones cortas y piezas para redes con ritmo editorial.</p></div>
+      </div>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

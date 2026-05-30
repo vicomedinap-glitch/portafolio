@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victoria Medina | Portafolio Creativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mr+Dafoe&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="intro-overlay" id="introOverlay">
+      <div class="intro-film"></div>
+      <div class="intro-copy">
+        <p class="headline">Victoria Medina</p>
+        <p class="subline">Diseñadora Gráfica · Branding · Dirección de Arte · Diseño Digital</p>
+        <p class="phrase" id="openingPhrase">Transformo ideas en experiencias visuales.</p>
+        <button class="enter-button" id="enterButton">Explora el tablero</button>
+      </div>
+    </div>
+
+    <main class="studio" id="studio">
+      <section class="cork-wall" id="corkWall">
+        <div class="cork-surface"></div>
+        <div class="cork-mesh"></div>
+
+        <div class="board-item note note-yellow" data-section="sobre-mi" style="--x:18vw; --y:15vh; --r:-4deg;">
+          <span class="pin"></span>
+          <div class="note-copy">
+            <p>Sobre mí</p>
+          </div>
+        </div>
+
+        <div class="board-item polaroid-group" data-section="proyectos" style="--x:65vw; --y:18vh; --r:5deg;">
+          <span class="pin pin-small"></span>
+          <div class="polaroid" style="--delay:0s;"><img src="assets/polaroid1.svg" alt="Polaroid Branding"/></div>
+          <div class="polaroid" style="--delay:0.08s;"><img src="assets/polaroid2.svg" alt="Polaroid Editorial"/></div>
+          <div class="polaroid" style="--delay:0.16s;"><img src="assets/polaroid3.svg" alt="Polaroid Packaging"/></div>
+        </div>
+
+        <div class="board-item paper paper-clip" data-section="experiencia" style="--x:10vw; --y:62vh; --r:3deg;">
+          <div class="clip"></div>
+          <div class="paper-copy"><p>Experiencia</p></div>
+        </div>
+
+        <div class="board-item pantone" data-section="habilidades" style="--x:35vw; --y:55vh; --r:-6deg;">
+          <span class="pin"></span>
+          <div class="swatch top">Branding</div>
+          <div class="swatch mid">Editorial</div>
+          <div class="swatch bot">Motion</div>
+        </div>
+
+        <div class="board-item sticker-stash" data-section="software" style="--x:80vw; --y:68vh; --r:8deg;">
+          <div class="sticker">Ps</div>
+          <div class="sticker">Ai</div>
+          <div class="sticker">Ae</div>
+        </div>
+
+        <div class="board-item sketchpad" data-section="proceso" style="--x:54vw; --y:72vh; --r:-8deg;">
+          <span class="tape tape-top"></span>
+          <div class="sketch-frame"><p>Proceso creativo</p></div>
+        </div>
+
+        <div class="board-item cards" data-section="servicios" style="--x:76vw; --y:28vh; --r:-5deg;">
+          <span class="pin pin-small"></span>
+          <div class="business-card"><p>Servicios</p></div>
+        </div>
+
+        <div class="board-item sticky-notes" data-section="testimonios" style="--x:48vw; --y:34vh; --r:4deg;">
+          <span class="pin"></span>
+          <div class="handwritten">Testimonios</div>
+        </div>
+
+        <div class="board-item trophies" data-section="logros" style="--x:26vw; --y:34vh; --r:-3deg;">
+          <div class="award"><span>Premios</span></div>
+          <div class="award small"><span>Medallas</span></div>
+        </div>
+
+        <div class="board-item lab" data-section="lab" style="--x:15vw; --y:44vh; --r:7deg;">
+          <div class="lab-box"><span>Laboratorio</span></div>
+        </div>
+
+        <div class="board-item contact-card" data-section="contacto" style="--x:62vw; --y:46vh; --r:-7deg;">
+          <div class="contact-card-face"><p>Contacto</p></div>
+        </div>
+
+        <div class="board-item EasterEgg" title="Minijuego secreto" style="--x:90vw; --y:8vh; --r:0deg;">
+          <span class="secret-dot"></span>
+        </div>
+      </section>
+    </main>
+
+    <div class="page-panel" id="pagePanel" aria-hidden="true">
+      <button class="close-panel" id="closePanel">Volver al tablero</button>
+      <div class="panel-content" id="panelContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <audio id="tackFile" src="assets/tack.wav" preload="auto"></audio>
+  </body>
+</html>

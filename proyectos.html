@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Proyectos — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.2rem}
+      .case{background:rgba(255,255,255,0.03);border-radius:18px;padding:1rem;overflow:hidden}
+      .case img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+      .meta{color:rgba(248,244,239,0.9)}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1200px;margin:2rem auto;padding:1rem">
+      <h1>Proyectos</h1>
+      <p class="meta">Galería editorial premium con casos de estudio: branding, packaging, motion y diseño editorial.</p>
+
+      <div class="gallery">
+        <article class="case">
+          <img src="assets/polaroid-hero-1.jpg" alt="Proyecto Branding">
+          <h3>Identidad — Marca A</h3>
+          <p>Contexto, investigación y aplicación de un sistema visual que perdura.</p>
+        </article>
+        <article class="case">
+          <img src="assets/polaroid-hero-2.jpg" alt="Proyecto Editorial">
+          <h3>Editorial — Revista B</h3>
+          <p>Diseño de layouts, selección tipográfica y narrativa visual para lectura placentera.</p>
+        </article>
+        <article class="case">
+          <img src="assets/polaroid3.svg" alt="Proyecto Packaging">
+          <h3>Packaging — Producto C</h3>
+          <p>Materiales e interacción física pensados para sorprender al abrir.</p>
+        </article>
+      </div>
+
+      <section style="margin-top:1.8rem">
+        <h2>Casos de estudio</h2>
+        <div class="panel-grid">
+          <div class="panel-card"><h2>Contexto</h2><p>Problemas, objetivos y audiencia.</p></div>
+          <div class="panel-card"><h2>Investigación</h2><p>Moodboards, tendencias y referencias.</p></div>
+          <div class="panel-card"><h2>Resultado</h2><p>Aplicaciones, mockups y medición de impacto.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

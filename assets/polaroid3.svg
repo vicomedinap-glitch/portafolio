@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="630" viewBox="0 0 500 630">
+  <rect x="0" y="0" width="500" height="630" fill="#fff" rx="18"/>
+  <rect x="18" y="18" width="464" height="464" fill="#e8d1b2" rx="12" />
+  <rect x="36" y="504" width="428" height="90" fill="#fff" rx="8" />
+  <text x="50%" y="560" font-family="Inter, Arial" font-size="20" fill="#3b2a18" text-anchor="middle">Proyecto — Packaging</text>
+</svg>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Software — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .stickers{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+      .sticker{width:86px;height:86px;border-radius:14px;display:grid;place-items:center;font-weight:800;background:#fff}
+      .tool-examples{margin-top:1rem}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1000px;margin:2rem auto;padding:1rem">
+      <h1>Software</h1>
+      <p>Herramientas con las que trabajo para convertir bocetos en piezas finales.</p>
+
+      <div class="stickers">
+        <div class="sticker">Ps</div>
+        <div class="sticker">Ai</div>
+        <div class="sticker">Id</div>
+        <div class="sticker">Ae</div>
+        <div class="sticker">Pr</div>
+        <div class="sticker">Figma</div>
+      </div>
+
+      <div class="tool-examples panel-grid">
+        <div class="panel-card"><h2>Photoshop</h2><p>Composiciones y retoque creativo para mockups y collages.</p></div>
+        <div class="panel-card"><h2>Illustrator</h2><p>Sistemas vectoriales y piezas ilustradas.</p></div>
+        <div class="panel-card"><h2>Figma</h2><p>Prototipado y sistemas de diseño para experiencias digitales.</p></div>
+      </div>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>

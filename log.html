@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Logros — Victoria Medina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .ach{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+      .ach .card{background:rgba(255,255,255,0.04);padding:1rem;border-radius:12px}
+    </style>
+  </head>
+  <body class="page-transition">
+    <header style="padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center">
+      <a href="index.html" class="close-panel" id="backBtn">← Volver al tablero</a>
+    </header>
+    <main class="panel-content" style="max-width:1000px;margin:2rem auto;padding:1rem">
+      <h1>Logros y reconocimientos</h1>
+      <p>Certificaciones, premios y publicaciones.</p>
+
+      <div class="ach">
+        <div class="card"><strong>Premio A</strong><p>Reconocimiento por mejor identidad.</p></div>
+        <div class="card"><strong>Publicación B</strong><p>Proyecto destacado en revista de diseño.</p></div>
+        <div class="card"><strong>Evento C</strong><p>Charla sobre procesos creativos.</p></div>
+      </div>
+    </main>
+
+    <script>
+      const bodyEl = document.body;
+      window.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => bodyEl.classList.add('entered'));
+      });
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = backBtn.getAttribute('href');
+        bodyEl.classList.add('exiting');
+        bodyEl.classList.remove('entered');
+        try { new Audio('assets/tack.wav').play(); } catch (err) {}
+        setTimeout(() => window.location = href, 520);
+      });
+    </script>
+  </body>
+</html>
